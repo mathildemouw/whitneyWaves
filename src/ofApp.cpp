@@ -15,14 +15,12 @@ void ofApp::draw(){
 
     // The Good Place green
     ofSetColor(89, 189, 100);
-    float x = sin(ofGetElapsedTimef());
-    cout << ofGetElapsedTimef();
 
     float i;
-    for (i=0; i < 999; i++) {
-        ofDrawCircle(x * i, i, 10);
+    for (i=10; i < 800; i+=  20) {
+        float x = ofMap(sin(ofGetElapsedTimef()* (i * 0.01)), -1, 1, 30, 1000);
+        ofDrawCircle(x, i, 10);
     }
-
 }
 
 //--------------------------------------------------------------
